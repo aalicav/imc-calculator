@@ -2,7 +2,9 @@ document.querySelector(".container #resultado").style.display = 'none';
 function calculaImc(){
 let peso = Number(document.querySelector("#peso").value.replace(',','.'));
 let altura = Number(document.querySelector("#altura").value.replace(',','.'));
-if (isNaN(peso)||isNaN(altura)){
+if (isNaN(peso)||isNaN(altura)||altura==''||peso==''){
+  document.querySelector(".container #resultado").style.background = 'red';
+  document.querySelector(".container #resultado").style.color = 'white';
   document.querySelector(".container #resultado").style.display = 'block';
   document.querySelector("#resultado").textContent = 'Valor invalido! Digite somente números.';
 }else{
